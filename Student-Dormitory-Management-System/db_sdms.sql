@@ -1,19 +1,3 @@
-/*
- Navicat Premium Data Transfer
-
- Source Server         : 本地MySQL56
- Source Server Type    : MySQL
- Source Server Version : 50642
- Source Host           : localhost:3306
- Source Schema         : db_sdms
-
- Target Server Type    : MySQL
- Target Server Version : 50642
- File Encoding         : 65001
-
- Date: 23/07/2021 18:10:58
-*/
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -50,7 +34,7 @@ CREATE TABLE `t_class`  (
 -- ----------------------------
 INSERT INTO `t_class` VALUES (1, '计算机2001');
 INSERT INTO `t_class` VALUES (2, '计算机2002');
-INSERT INTO `t_class` VALUES (3, '计算机1703');
+INSERT INTO `t_class` VALUES (3, '计算机2003');
 INSERT INTO `t_class` VALUES (4, '计算机2004');
 INSERT INTO `t_class` VALUES (5, '计算机2005');
 
@@ -122,9 +106,9 @@ CREATE TABLE `t_room`  (
 -- ----------------------------
 -- Records of t_room
 -- ----------------------------
-INSERT INTO `t_room` VALUES (1, '郑州省武汉市', '310', '/sdms-images/room-1.jpg', 13);
-INSERT INTO `t_room` VALUES (2, '郑州省武汉市', '312', '/sdms-images/room-2.jpg', 13);
-INSERT INTO `t_room` VALUES (3, '郑州武汉市', '313', '', 13);
+INSERT INTO `t_room` VALUES (1, '河南省郑州市', '310', '/sdms-images/room-1.jpg', 13);
+INSERT INTO `t_room` VALUES (2, '河南省郑州市', '312', '/sdms-images/room-2.jpg', 13);
+INSERT INTO `t_room` VALUES (3, '河南省郑州市', '313', '', 13);
 
 -- ----------------------------
 -- Table structure for t_room_request
@@ -201,7 +185,7 @@ CREATE TABLE `t_user`  (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES (1, '湖北省武汉市', '/sdms-images/avatar-3.jpg', 'MALE', '0192023a7bbd73250516f069df18b500', '15566667777', 'admin', 2);
+INSERT INTO `t_user` VALUES (1, '河南省郑州市', '/sdms-images/avatar-3.jpg', 'MALE', '0192023a7bbd73250516f069df18b500', '15566667777', 'admin', 2);
 INSERT INTO `t_user` VALUES (9, '北京市', '/sdms-images/avatar-2.jpg', 'MALE', 'b5b6e0fc8e3ae07753dbf8793275881e', '15512341234', '01217', 1);
 INSERT INTO `t_user` VALUES (10, '天津市', '/sdms-images/avatar-3.jpg', 'FEMALE', '783011afda4fee11b6ee2cff303da8cb', '18812341234', '01218', 1);
 INSERT INTO `t_user` VALUES (11, '重庆市', '/sdms-images/avatar-4.jpg', 'FEMALE', 'eaa6a59c9212e6c319c6701991a38509', '17712341234', '01219', 1);
