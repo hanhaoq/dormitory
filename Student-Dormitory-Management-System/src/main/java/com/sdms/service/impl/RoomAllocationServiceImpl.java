@@ -63,6 +63,9 @@ public class RoomAllocationServiceImpl implements RoomAllocationService {
             default:
                 break;
         }
+//        通过 Projections.bean 方法创建了一个 Student 类型的投影结果，并指定了投影结果的字段映射关系。
+//
+//        Projections.bean 方法用于创建一个投影结果对象，该对象可以选择性地包含实体类中的某些字段，而不需要返回整个实体对象
         condition.and(student.room.isNotNull());
         val query = queryFactory
                 .select(Projections.bean(Student.class,

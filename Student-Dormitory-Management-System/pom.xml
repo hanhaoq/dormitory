@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+<!--     //通过引入spring-boot-starter-parent作为父项目，可以获得Spring Boot的默认配置和依赖管理。-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -31,17 +31,22 @@
     </properties>
 
     <dependencies>
+    <!--spring-boot-starter-aop是Spring Boot提供的用于支持AOP的起始依赖。通过引入该依赖项，你可以在Spring Boot项目中使用AOP的相关功能。-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-
+    <!-- spring data jpa 基于JPA，
+        用于简化数据访问层开发的模块。
+        它结合了Spring和JPA（Java Persistence API）的功能，
+        提供了一种更简单、更高级的方式来访问和操作数据库  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- QueryDSL 相关依赖 -->
+       <!--Querydsl是一个强大的类型安全查询框架，它可以与JPA集成，
+       提供了一种优雅且类型安全的查询语法，主要是构建复杂查询语句-->
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-jpa</artifactId>
@@ -52,24 +57,31 @@
             <artifactId>querydsl-apt</artifactId>
             <scope>provided</scope>
         </dependency>
-
+       <!--引入Thymeleaf在Spring Boot项目中的相关依赖。
+       Thymeleaf是一款流行的Java模板引擎，用于构建动态的Web应用程序界面。-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-
+       <!--Spring Boot Web Starter提供了一系列依赖和自动配置，包括Spring MVC、Tomcat（或其他嵌入式Web服务器）、
+       Jackson（用于JSON序列化和反序列化）等。
+       它简化了Web应用程序的开发过程，提供了基本的Web功能和特性，例如路由、请求处理、视图解析、静态资源管理等。         -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <!--自定义配置项需要的依赖-->
+        <!-- 简化配置类的编写：
+        @ConfigurationProperties注解可以将配置文件中的属性值与配置类的字段或属性进行绑定，
+        你只需要定义一个配置类，通过注解将配置文件中的属性与该类的字段或属性进行映射，而不需要手动编写getter和setter方法.-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
 
+       <!--mysql驱动,连接数据库用的-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -81,7 +93,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
+       <!-- 安全框架，用与认证（登录认证）和授权       -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
@@ -93,14 +105,16 @@
             <artifactId>shiro-spring</artifactId>
             <version>${shiro.version}</version>
         </dependency>
-
+       <!--  简化实体类开发提供，使用注解一件添加get,set等实体类需要的方法 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
-
+    <!--是Swagger在Spring Boot项目中提供的起始依赖。
+    通过引入该依赖项，
+    你可以在Spring Boot项目中使用Swagger来生成API文档并进行可视化展示。        -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
@@ -121,6 +135,7 @@
                             <goal>process</goal>
                         </goals>
                         <configuration>
+                            <!--apt-maven-plugin是一个用于支持注解处理器的Maven插件。通过配置该插件，可以在构建过程中使用Querydsl的注解处理器生成Querydsl查询类                     -->
                             <outputDirectory>target/generated-sources/java</outputDirectory>
                             <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
                         </configuration>

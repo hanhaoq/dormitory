@@ -104,7 +104,7 @@ public class RoomRequestController {
             return new LayuiResult<>(FAILED, null, null);
         }
     }
-
+    //住宿申请
     @ApiOperation("新增住宿申请")
     @GetMapping("/room-request/new")
     @ResponseBody

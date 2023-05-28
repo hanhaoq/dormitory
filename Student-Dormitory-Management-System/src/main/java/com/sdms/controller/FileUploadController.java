@@ -33,10 +33,32 @@ public class FileUploadController {
      *
      * @param request 图片文件上传请求,要求参数名是 file, (例如：用原生form提交,input标签需要添加 name="file" )
      * @return JSON格式的对象, code == 0 表示上传成功 , code == 1 表示上传失败
+     *
+     *
+     * 方法的参数是HttpServletRequest对象，通过类型转换为MultipartHttpServletRequest对象，用于获取上传的文件。
+     *
+     * 代码首先判断是否是MultipartHttpServletRequest类型的请求，如果不是，则返回一个请求异常的错误结果。
+     *
+     * 获取上传的文件对象，存储在multipartFile变量中，如果获取到的文件对象为null，则返回参数异常的错误结果。
+     *
+     * 获取上传文件的原始文件名，如果文件名为空，则返回文件名为空的错误结果。
+     *
+     * 通过pictureConfig获取文件存储路径，将文件存储在指定路径下。
+     *
+     * 创建目标文件对象dest，并判断其父目录是否存在，如果不存在则尝试创建。
+     *
+     * 将上传的文件保存到目标文件中。
+     *
+     * 如果保存过程中发生异常，则记录错误日志，并返回文件保存失败的错误结果。
+     *
+     * 如果保存成功，则返回一个成功的结果，包含文件的访问URL。
+     *
+     * 私有方法result用于生成返回结果对象，并将文件访问URL添加到结果中
      */
     @ApiOperation("ajax:本地图片文件上传")
     @PostMapping("/upload")
     @ResponseBody
+    //multipart/form-data
     public LayuiResult<Object> upload(HttpServletRequest request) {
         MultipartHttpServletRequest mRequest;
         if (request instanceof MultipartHttpServletRequest) {
@@ -60,6 +82,7 @@ public class FileUploadController {
             }
         }
         try {
+            //transferTo(File dest): 将上传文件保存到指定的目标文件
             multipartFile.transferTo(dest);
         } catch (Exception e) {
             log.error("文件上传失败: error = " + e.getMessage());

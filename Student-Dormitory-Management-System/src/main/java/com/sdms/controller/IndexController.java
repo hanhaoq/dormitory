@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.annotation.Resource;
-
+//主页，即登录页面即
 @Controller
 public class IndexController {
 
@@ -22,7 +22,7 @@ public class IndexController {
     public String toLogin() {
         return "login"; // Thymeleaf模板的名字,表示 templates/login.html
     }
-
+    //
     @GetMapping(value = {"/", "/index"})
     public String toIndex(Model model) {
         val room = roomService.getCurrentStudentRoom();

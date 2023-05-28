@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * 学生
@@ -32,6 +33,9 @@ public class Student {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @JsonIgnore
     private User user;
+
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "student")
+//    private Set<MainTenance> MainTenances;
 
     // 每个学生有自己的班级,多个学生可以有同一个班级
     @ManyToOne(fetch = FetchType.EAGER)

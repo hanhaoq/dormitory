@@ -15,13 +15,13 @@ import javax.annotation.Resource;
 import static com.sdms.common.result.LayuiResult.ResultCode.FAILED;
 import static com.sdms.common.result.LayuiResult.ResultCode.SUCCESS;
 import static com.sdms.common.util.StringUtils.parseStringList;
-
+//对应后端住宿详情中的功能
 @Controller
 public class AllocationController {
 
     @Resource
     private RoomAllocationService allocationService;
-
+    //跳转页面
     @GetMapping(value = {"/admin/allocation-list"})
     public String toAdminAllocationList() {
         return "admin/allocation-list"; // Thymeleaf模板的名字,表示 templates/admin/allocation-list.html

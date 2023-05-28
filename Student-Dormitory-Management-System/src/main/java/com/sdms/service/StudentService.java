@@ -19,4 +19,6 @@ public interface StudentService extends BaseEntityService<Student> {
     OperationResult<String> deleteStudentByIds(Collection<String> ids);
 
     List<Student> listAllStudents();
+
+    Student getStudentByUserId(String id);
 }

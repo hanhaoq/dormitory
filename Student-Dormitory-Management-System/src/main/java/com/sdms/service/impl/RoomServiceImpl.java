@@ -147,7 +147,7 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public Room getCurrentStudentRoom() {
-        val currentUser = sessionService.getCurrentUser();
+        val currentUser = sessionService.getCurrentUser();//从session获取当前用户
         if (currentUser == null || currentUser.getId() == null) {
             return null;
         }

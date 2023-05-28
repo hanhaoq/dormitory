@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>学生住宿管理系统前台</title>
+    <title>学生宿舍管理系统前台</title>
     <link rel="icon" href="../static/favicon.ico" th:href="@{/favicon.ico}" type="image/x-icon">
     <!--导入网页图标 -->
     <link rel="shortcut icon" href="../static/favicon.ico" th:href="@{/favicon.ico}" type="image/x-icon">
@@ -25,7 +25,7 @@
 <body>
 <div>
     <ul class="layui-nav" lay-filter="" style="position: fixed;top:0;left: 0;right: 0;z-index: 1000;">
-        <li class="layui-nav-item"><a href="" id="hover_div" style="font-size:large">&nbsp;学生住宿管理系统</a></li>
+        <li class="layui-nav-item"><a href="" id="hover_div" style="font-size:large">&nbsp;学生宿舍管理系统</a></li>
         <li class="layui-nav-item "><a href="javascript:void(0)"><span id="i_room"
                                                                        th:text="${currentRoom==null?'未安排宿舍':'我的寝室:'+currentRoom.name}">XXX</span></a>
             <dl class="layui-nav-child">
@@ -44,6 +44,7 @@
             </a>
             <dl class="layui-nav-child">
                 <dd><a href="" th:href="@{/user}">个人中心</a></dd>
+                <dd><a href="" th:href="@{/mainTenance/input}">报修申请</a></dd>
             </dl>
         </li>
         <li class="layui-nav-item layui-layout-right"><a href="/logout">安全退出</a></li>

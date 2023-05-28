@@ -13,7 +13,6 @@ import com.sdms.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 
 import java.util.Collection;
@@ -27,7 +26,7 @@ import static com.sdms.common.util.StringUtils.trimAllWhitespace;
 
 @Slf4j
 @Service
-public class CategoryServiceImpl implements CategoryService {
+public class CategoryServiceImpl<E> implements CategoryService {
 
     @Resource
     private CategoryDao categoryDao;
@@ -104,8 +103,11 @@ public class CategoryServiceImpl implements CategoryService {
         return success("删除成功");
     }
 
+
+
     @Override
     public List<Category> listAllCategories() {
+
         return categoryDao.findAll();
     }
 }
