@@ -34,6 +34,7 @@
             </a>
             <dl class="layui-nav-child">
                 <dd><a href="" th:href="@{/user}">个人中心</a></dd>
+                <dd><a href="" th:href="@{/mainTenance/input}">报修申请</a></dd>
             </dl>
         </li>
         <li class="layui-nav-item layui-layout-right"><a href="/logout">安全退出</a></li>
@@ -115,7 +116,7 @@
         //图片上传的逻辑
         var uploadInst = upload.render({
             elem: '#uploadAvatarBtn',
-            url: pictureUploadURL, //改成您自己的文件上传接口
+            url: '/upload', //改成您自己的文件上传接口
             before: function (obj) {
                 //预读本地文件示例，不支持ie8
                 obj.preview(function (index, file, result) {

@@ -69,6 +69,7 @@ public class UserServiceImpl implements UserService {
         if (isBlankOrNull(password)) {
             return failure("密码不可以为空");
         }
+        //获取当前主体（Subject）
         val subject = SecurityUtils.getSubject();
         try {
             log.info("用户登录验证:username=" + username + ",password=" + password);

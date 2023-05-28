@@ -18,9 +18,14 @@ import com.sdms.service.StudentService;
 import com.sdms.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.util.Collection;
 import java.util.List;
 
@@ -128,7 +133,26 @@ public class StudentServiceImpl implements StudentService {
         }
         return null;
     }
-
+    @Override
+    public Student getStudentByUserId(String id)
+    {
+        val optional = studentDao.findOne(new Specification<Student>() {
+            @Override
+            public Predicate toPredicate(Root<Student> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
+                // 加入关联查询
+                root.join("user");
+                // 构建查询条件
+                Predicate predicate = criteriaBuilder.equal(root.get("user").get("id"), id);
+                return predicate;
+            }
+        });
+        if(optional.isPresent()){
+            val student = optional.get();
+            this.fillTransientFields(student);
+            return student;
+        }
+        return null;
+    }
     @Override
     public OperationResult<Student> saveStudent(Student student) {
         if (student == null || isBlankOrNull(student.getId())) {

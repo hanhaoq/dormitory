@@ -22,7 +22,7 @@ import java.util.*;
  * 注：对使用了@ResponseBody的Restful接口有效
  */
 @RestControllerAdvice(basePackages = {"com.sdms.controller"})
-public class Advice implements ResponseBodyAdvice<Object> {
+public class   Advice implements ResponseBodyAdvice<Object> {
 
     @Override
     public boolean supports(MethodParameter returnType, @NonNull Class<? extends HttpMessageConverter<?>> aClass) {
@@ -41,18 +41,17 @@ public class Advice implements ResponseBodyAdvice<Object> {
         if (data instanceof String) {
             // String类型
             val objectMapper = new ObjectMapper();
-            try {
-                // 将数据包装在LayuiResult里后，再转换为json字符串响应给前端
+            try {// 将数据包装在LayuiResult里后，再转换为json字符串响应给前端
                 val result = new LayuiResult<>(LayuiResult.ResultCode.SUCCESS, null, Collections.singletonList((String) data));
                 return objectMapper.writeValueAsString(result);
             } catch (JsonProcessingException e) {
                 throw new ApiException();
             }
         } else if (data instanceof Page) {
-            // Page类型
+            //如果数据是Page类型封装到LayUiResult中
             return new LayuiResult<>((Page<?>) data);
         } else {
-            // 其它的对象类型
+            //其它的对象类型
             List<Object> objectList;
             if (data == null) {
                 objectList = Collections.emptyList();

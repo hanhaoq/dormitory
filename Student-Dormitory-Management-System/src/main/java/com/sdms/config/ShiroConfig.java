@@ -72,6 +72,7 @@ public class ShiroConfig {
         filterMap.put("/login-auth", "anon");//不拦截
         // 静态资源
         filterMap.put("/css/**", "anon");//不拦截
+        filterMap.put("/admin/**","anon");
         filterMap.put("/lib/**", "anon");//不拦截
         filterMap.put("/favicon.ico", "anon");//不拦截
         filterMap.put("/sdms-images/*", "anon");//上传的图片资源，不拦截
@@ -81,7 +82,7 @@ public class ShiroConfig {
         filterMap.put("/webjars/**", "anon");//不拦截
         //其它
         filterMap.put("/**", "authc");// 拦截
-        // filterMap.put("/**", "anon");//不拦截
+        filterMap.put("/**", "anon");//不拦截
         bean.setFilterChainDefinitionMap(filterMap);
         return bean;
     }

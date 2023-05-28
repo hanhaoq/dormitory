@@ -45,6 +45,10 @@ public class Room {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "room")
     private Set<Student> students;
 
+//    //一个宿舍有多分维修申请
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "room")
+//    private Set<MainTenance> mainTenances;
+
     @Transient
     @ApiModelProperty("临时字段:寝室类型id")
     private Long categoryId;

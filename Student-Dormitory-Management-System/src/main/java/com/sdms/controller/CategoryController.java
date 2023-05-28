@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 import static com.sdms.common.result.LayuiResult.ResultCode.FAILED;
 import static com.sdms.common.result.LayuiResult.ResultCode.SUCCESS;
 import static com.sdms.common.util.StringUtils.parseLongList;
-
+//对应宿舍管理中的寝室类型管理部分
 @Api("寝室类型相关api")
 @Controller
 public class CategoryController {
@@ -89,4 +89,6 @@ public class CategoryController {
             return new LayuiResult<>(FAILED, null, null);
         }
     }
+
+
 }

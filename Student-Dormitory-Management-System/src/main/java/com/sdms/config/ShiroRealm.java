@@ -28,7 +28,7 @@ public class ShiroRealm extends AuthorizingRealm {
         val up = (UsernamePasswordToken) token;
         val username = up.getUsername();
         val user = userService.getUserByUsername(username);
-        if (user == null) {
+        if (null == user) {
             throw new UnknownAccountException(); // 根据用户名查询不到用户,交给shiro捕获用户不存在的异常
         }
         // 将 username 作为加密的盐值

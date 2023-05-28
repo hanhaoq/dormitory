@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8082
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -16,4 +16,4 @@ spring:
       max-file-size: 100MB
       max-request-size: 1000MB
 picture:
-  path: D:/Desktop/Student-Dormitory-Management-System/picture-path/
+  path: D:/Spring boot/dormitory/Student-Dormitory-Management-System/picture-path/
