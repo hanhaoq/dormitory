@@ -19,6 +19,22 @@ INSERT INTO `t_category` VALUES (13, 4, '四人寝');
 INSERT INTO `t_category` VALUES (14, 6, '六人寝');
 INSERT INTO `t_category` VALUES (15, 10, '十人寝');
 
+
+create table if not exists t_main_tenance
+(
+    id bigint auto_increment comment '报修申请的主键'
+        primary key,
+    date datetime(6) not null,
+    description varchar(255) not null comment '报修的具体详情',
+    status varchar(255) default 'UNTREATED' not null comment '报修申请的状态',
+    room_id bigint null comment '寝室的主键',
+    student_id varchar(255) charset utf8 null comment '学号,即学生的主键',
+    constraint FKe5t8lw1p1af6jd9cgred4rooe
+        foreign key (room_id) references t_room (id),
+    constraint FKhsssfryi65nboj3uk1nlseec
+        foreign key (student_id) references t_student (id)
+)
+    engine=InnoDB;
 -- ----------------------------
 -- Table structure for t_class
 -- ----------------------------
