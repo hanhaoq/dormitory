@@ -834,416 +834,344 @@ SELECT|sys.sys_config
       <Engine>InnoDB</Engine>
       <Collation>utf8_general_ci</Collation>
     </table>
-    <table id="258" parent="7" name="t_user">
-      <Engine>InnoDB</Engine>
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <column id="259" parent="249" name="id">
+    <column id="258" parent="249" name="id">
       <Position>1</Position>
       <Comment>寝室类型的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="260" parent="249" name="max_size">
+    <column id="259" parent="249" name="max_size">
       <Position>2</Position>
       <Comment>寝室可容纳学生人数的最大值</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="261" parent="249" name="name">
+    <column id="260" parent="249" name="name">
       <Position>3</Position>
       <Comment>寝室类型的名称</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="262" parent="249" name="PRIMARY">
+    <key id="261" parent="249" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="263" parent="250" name="id">
+    <column id="262" parent="250" name="id">
       <Position>1</Position>
       <Comment>教学班级的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="264" parent="250" name="name">
+    <column id="263" parent="250" name="name">
       <Position>2</Position>
       <Comment>教学班级的名称</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="265" parent="250" name="PRIMARY">
+    <key id="264" parent="250" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="266" parent="251" name="id">
+    <column id="265" parent="251" name="id">
       <Position>1</Position>
       <Comment>报修申请的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="267" parent="251" name="date">
+    <column id="266" parent="251" name="date">
       <Position>2</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="268" parent="251" name="description">
+    <column id="267" parent="251" name="description">
       <Position>3</Position>
       <Comment>报修的具体详情</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="269" parent="251" name="status">
+    <column id="268" parent="251" name="status">
       <Position>4</Position>
       <Comment>报修申请的状态</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;UNTREATED&apos;</DefaultExpression>
     </column>
-    <column id="270" parent="251" name="room_id">
+    <column id="269" parent="251" name="room_id">
       <Position>5</Position>
       <Comment>寝室的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
     </column>
-    <column id="271" parent="251" name="student_id">
+    <column id="270" parent="251" name="student_id">
       <Position>6</Position>
       <Comment>学号,即学生的主键</Comment>
       <DataType>varchar(255)|0s</DataType>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <index id="272" parent="251" name="FKe5t8lw1p1af6jd9cgred4rooe">
+    <index id="271" parent="251" name="FKe5t8lw1p1af6jd9cgred4rooe">
       <ColNames>room_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="273" parent="251" name="FKhsssfryi65nboj3uk1nlseec">
+    <index id="272" parent="251" name="FKhsssfryi65nboj3uk1nlseec">
       <ColNames>student_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="274" parent="251" name="PRIMARY">
+    <key id="273" parent="251" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="275" parent="251" name="FKe5t8lw1p1af6jd9cgred4rooe">
+    <foreign-key id="274" parent="251" name="FKe5t8lw1p1af6jd9cgred4rooe">
       <ColNames>room_id</ColNames>
       <RefTableName>t_room</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="276" parent="251" name="FKhsssfryi65nboj3uk1nlseec">
+    <foreign-key id="275" parent="251" name="FKhsssfryi65nboj3uk1nlseec">
       <ColNames>student_id</ColNames>
       <RefTableName>t_student</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="277" parent="252" name="id">
+    <column id="276" parent="252" name="id">
       <Position>1</Position>
       <Comment>权限的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="278" parent="252" name="code">
+    <column id="277" parent="252" name="code">
       <Position>2</Position>
       <Comment>权限码</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="279" parent="252" name="description">
+    <column id="278" parent="252" name="description">
       <Position>3</Position>
       <Comment>权限的描述</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="280" parent="252" name="name">
+    <column id="279" parent="252" name="name">
       <Position>4</Position>
       <Comment>权限的名称</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="281" parent="252" name="PRIMARY">
+    <key id="280" parent="252" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="282" parent="253" name="id">
+    <column id="281" parent="253" name="id">
       <Position>1</Position>
       <Comment>角色的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="283" parent="253" name="name">
+    <column id="282" parent="253" name="name">
       <Position>2</Position>
       <Comment>角色的名称</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="284" parent="253" name="UK_bkpm7njy2ort1yoiddc7jg8gj">
+    <index id="283" parent="253" name="UK_bkpm7njy2ort1yoiddc7jg8gj">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="285" parent="253" name="PRIMARY">
+    <key id="284" parent="253" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="286" parent="253" name="UK_bkpm7njy2ort1yoiddc7jg8gj">
+    <key id="285" parent="253" name="UK_bkpm7njy2ort1yoiddc7jg8gj">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>UK_bkpm7njy2ort1yoiddc7jg8gj</UnderlyingIndexName>
     </key>
-    <column id="287" parent="254" name="role_id">
+    <column id="286" parent="254" name="role_id">
       <Position>1</Position>
       <Comment>角色的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="288" parent="254" name="permission_id">
+    <column id="287" parent="254" name="permission_id">
       <Position>2</Position>
       <Comment>权限的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="289" parent="254" name="FKjobmrl6dorhlfite4u34hciik">
+    <index id="288" parent="254" name="FKjobmrl6dorhlfite4u34hciik">
       <ColNames>permission_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="290" parent="254" name="PRIMARY">
+    <key id="289" parent="254" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>role_id
 permission_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="291" parent="254" name="FK90j038mnbnthgkc17mqnoilu9">
+    <foreign-key id="290" parent="254" name="FK90j038mnbnthgkc17mqnoilu9">
       <ColNames>role_id</ColNames>
       <RefTableName>t_role</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="292" parent="254" name="FKjobmrl6dorhlfite4u34hciik">
+    <foreign-key id="291" parent="254" name="FKjobmrl6dorhlfite4u34hciik">
       <ColNames>permission_id</ColNames>
       <RefTableName>t_permission</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="293" parent="255" name="id">
+    <column id="292" parent="255" name="id">
       <Position>1</Position>
       <Comment>寝室的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="294" parent="255" name="address">
+    <column id="293" parent="255" name="address">
       <Position>2</Position>
       <Comment>寝室的地址</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="295" parent="255" name="name">
+    <column id="294" parent="255" name="name">
       <Position>3</Position>
       <Comment>寝室的名称</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="296" parent="255" name="picture">
+    <column id="295" parent="255" name="picture">
       <Position>4</Position>
       <Comment>寝室的照片</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="297" parent="255" name="category_id">
+    <column id="296" parent="255" name="category_id">
       <Position>5</Position>
       <Comment>寝室类型的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
     </column>
-    <index id="298" parent="255" name="FKtr387rfoo7r0y0aymvnqb9gso">
+    <index id="297" parent="255" name="FKtr387rfoo7r0y0aymvnqb9gso">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="299" parent="255" name="PRIMARY">
+    <key id="298" parent="255" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="300" parent="255" name="FKtr387rfoo7r0y0aymvnqb9gso">
+    <foreign-key id="299" parent="255" name="FKtr387rfoo7r0y0aymvnqb9gso">
       <ColNames>category_id</ColNames>
       <RefTableName>t_category</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="301" parent="256" name="id">
+    <column id="300" parent="256" name="id">
       <Position>1</Position>
       <Comment>住宿申请的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="302" parent="256" name="status">
+    <column id="301" parent="256" name="status">
       <Position>2</Position>
       <Comment>住宿申请的状态</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;NO_HANDLE&apos;</DefaultExpression>
     </column>
-    <column id="303" parent="256" name="room_id">
+    <column id="302" parent="256" name="room_id">
       <Position>3</Position>
       <Comment>寝室的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
     </column>
-    <column id="304" parent="256" name="student_id">
+    <column id="303" parent="256" name="student_id">
       <Position>4</Position>
       <Comment>学号,即学生的主键</Comment>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <index id="305" parent="256" name="FKj02ld97dsteo49cacmpe23tb7">
+    <index id="304" parent="256" name="FKj02ld97dsteo49cacmpe23tb7">
       <ColNames>room_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="306" parent="256" name="FKhi32lfryi65nboj3uk1nlseec">
+    <index id="305" parent="256" name="FKhi32lfryi65nboj3uk1nlseec">
       <ColNames>student_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="307" parent="256" name="PRIMARY">
+    <key id="306" parent="256" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="308" parent="256" name="FKj02ld97dsteo49cacmpe23tb7">
+    <foreign-key id="307" parent="256" name="FKj02ld97dsteo49cacmpe23tb7">
       <ColNames>room_id</ColNames>
       <RefTableName>t_room</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="309" parent="256" name="FKhi32lfryi65nboj3uk1nlseec">
+    <foreign-key id="308" parent="256" name="FKhi32lfryi65nboj3uk1nlseec">
       <ColNames>student_id</ColNames>
       <RefTableName>t_student</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="310" parent="257" name="id">
+    <column id="309" parent="257" name="id">
       <Position>1</Position>
       <Comment>学号,即学生的主键</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="311" parent="257" name="name">
+    <column id="310" parent="257" name="name">
       <Position>2</Position>
       <Comment>学生的姓名</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="312" parent="257" name="room_id">
+    <column id="311" parent="257" name="room_id">
       <Position>3</Position>
       <Comment>寝室的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
     </column>
-    <column id="313" parent="257" name="teaching_class_id">
+    <column id="312" parent="257" name="teaching_class_id">
       <Position>4</Position>
       <Comment>教学班级的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
     </column>
-    <column id="314" parent="257" name="user_id">
+    <column id="313" parent="257" name="user_id">
       <Position>5</Position>
       <Comment>用户的主键</Comment>
       <DataType>bigint(20)|0s</DataType>
     </column>
-    <index id="315" parent="257" name="FKeq2uq5830o85jo7xg036j471c">
+    <index id="314" parent="257" name="FKeq2uq5830o85jo7xg036j471c">
       <ColNames>room_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="316" parent="257" name="FKt7sym0pjqh22ky0n4jsduj90u">
+    <index id="315" parent="257" name="FKt7sym0pjqh22ky0n4jsduj90u">
       <ColNames>teaching_class_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="317" parent="257" name="FKpyiblhnxi2vmb6bgpdwqqombu">
+    <index id="316" parent="257" name="FKpyiblhnxi2vmb6bgpdwqqombu">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="318" parent="257" name="PRIMARY">
+    <key id="317" parent="257" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="319" parent="257" name="FKeq2uq5830o85jo7xg036j471c">
+    <foreign-key id="318" parent="257" name="FKeq2uq5830o85jo7xg036j471c">
       <ColNames>room_id</ColNames>
       <RefTableName>t_room</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="320" parent="257" name="FKt7sym0pjqh22ky0n4jsduj90u">
+    <foreign-key id="319" parent="257" name="FKt7sym0pjqh22ky0n4jsduj90u">
       <ColNames>teaching_class_id</ColNames>
       <RefTableName>t_class</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="321" parent="257" name="FKpyiblhnxi2vmb6bgpdwqqombu">
+    <foreign-key id="320" parent="257" name="FKpyiblhnxi2vmb6bgpdwqqombu">
       <ColNames>user_id</ColNames>
       <RefTableName>t_user</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="322" parent="258" name="id">
-      <Position>1</Position>
-      <Comment>用户的主键</Comment>
-      <DataType>bigint(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="323" parent="258" name="address">
-      <Position>2</Position>
-      <Comment>用户的地址</Comment>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="324" parent="258" name="avatar">
-      <Position>3</Position>
-      <Comment>用户的头像,数据库中仅存储文件路径</Comment>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="325" parent="258" name="gender">
-      <Position>4</Position>
-      <Comment>用户的性别</Comment>
-      <DataType>varchar(255)|0s</DataType>
-      <DefaultExpression>&apos;MALE&apos;</DefaultExpression>
-    </column>
-    <column id="326" parent="258" name="password">
-      <Position>5</Position>
-      <Comment>数据库中存储的密码</Comment>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="327" parent="258" name="phone">
-      <Position>6</Position>
-      <Comment>用户的联系方式</Comment>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="328" parent="258" name="username">
-      <Position>7</Position>
-      <Comment>用于登录的账号</Comment>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="329" parent="258" name="role_id">
-      <Position>8</Position>
-      <Comment>角色的主键</Comment>
-      <DataType>bigint(20)|0s</DataType>
-    </column>
-    <index id="330" parent="258" name="UK_jhib4legehrm4yscx9t3lirqi">
-      <ColNames>username</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <index id="331" parent="258" name="FK76cs7cu4h4y8vc1vd4qyw36rt">
-      <ColNames>role_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="332" parent="258" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="333" parent="258" name="UK_jhib4legehrm4yscx9t3lirqi">
-      <ColNames>username</ColNames>
-      <UnderlyingIndexName>UK_jhib4legehrm4yscx9t3lirqi</UnderlyingIndexName>
-    </key>
-    <foreign-key id="334" parent="258" name="FK76cs7cu4h4y8vc1vd4qyw36rt">
-      <ColNames>role_id</ColNames>
-      <RefTableName>t_role</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
   </database-model>
